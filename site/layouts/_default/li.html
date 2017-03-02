@@ -1,0 +1,28 @@
+<li>
+    <article class="post animate--in-view">
+        <a class="post__imagewrapper" href="{{ .RelPermalink }}">
+            {{ if isset .Params "list_image" }}
+                <img src="/img/blog/{{ .Params.list_image }}" class="post__image">
+            {{ else }}
+                <img src="/img/blog/general_320.jpg" class="post__image">
+            {{ end }}
+        </a>
+        <div class="post__wrapper">
+            <header>
+                <span class="post__category">
+                    {{ range .Params.categories }}
+                      <a href="/categories/{{ . | urlize | lower }}" class="post__category-link post__category-link--{{ . | urlize | lower }}">{{ . }}</a>
+                    {{ end }}
+                </span>
+                <time class="post__time">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+            </header>
+            <h2 class="post__title"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+            <div class="post__summary">
+                {{ .Summary }}
+            </div>
+            <a href="{{ .RelPermalink }}" class="post__link">Read full post</a>
+
+        </div>
+
+    </article>
+</li>

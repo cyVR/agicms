@@ -1,0 +1,316 @@
+$color-category-work: #ff0066;
+$color-category-backstage: #00b585;
+$color-category-casestudies: #00ccff;
+$color-category-news: $color-labs-orange;
+$color-category-officefun: #9549b2;
+
+
+.page--news,
+.page--backstage,
+.page--case-studies,
+.page--office-fun,
+.page--work.page--node ,
+.page--blog {
+    .main-header {
+        @include vhFejk(30);
+        @include vhFejkPortable(40);
+        background-color: #252525;
+    }
+}
+
+.blog-post__header--category--news ,
+.page--news .main-header {
+    background-color: $color-category-news;
+}
+.blog-post__header--category--backstage,
+.page--backstage .main-header {
+    background-color: $color-category-backstage;
+}
+.blog-post__header--category--case-studies,
+.page--case-studies .main-header {
+    background-color: $color-category-casestudies;
+}
+.blog-post__header--category--office-fun,
+.page--office-fun .main-header {
+    background-color: $color-category-officefun;
+}
+.blog-post__header--category--work,
+.page--work.page--node  .main-header {
+    background: $color-category-work;
+}
+
+.main-header__title--blog {
+    @extend .alpha;
+}
+
+
+
+.posts {
+    list-style: none;
+    margin: 0 auto;
+    display: block;
+    @extend .eight-tenths;
+    @include media-query(palm){
+        width: 100%;
+    }
+}
+
+.categories {
+    padding: 60px 0 0;
+    @extend .epsilon;
+    &--mobile {
+        width: 100%;
+        margin: 0 auto 30px;
+        &__label {
+            @extend .epsilon;
+            text-align: center;
+            margin: 0;
+            padding-top: 30px;
+
+        }
+    }
+}
+
+.category-link {
+    padding: 0 10px;
+    a {
+        color: inherit;
+        &:hover {
+            color: #252525;
+        }
+    }
+    &--backstage a:hover {
+        color: $color-category-backstage;
+    }
+    &--case-studies a:hover {
+        color: $color-category-casestudies;
+    }
+    &--news a:hover {
+        color: $color-category-news;
+    }
+    &--office-fun a:hover {
+        color: $color-category-officefun;
+    }
+    &--work a:hover {
+        color: $color-category-work;
+    }
+}
+
+
+.post {
+
+    opacity: 0;
+    @include transition(opacity 350ms ease-in 70ms);
+    &.in-view--partial {
+        opacity: 1;
+    }
+
+    min-height: 228px;
+    border-bottom: 1px #d9d9d9 solid;
+    padding: 60px 30px;
+    @include media-query(palm){
+        padding: 0 20px 40px;
+        border: none;
+    }
+    &__imagewrapper {
+        width: 160px;
+        height: 160px;
+        display: block;
+        border-radius: 80px;
+        overflow: hidden;
+        float: left;
+        @include media-query(palm){
+            height: 80px;
+            width: 130%;
+            left: -15%;
+            position: relative;
+            border-radius: 0;
+            margin-bottom: 20px;
+        }
+
+    }
+    &__image {
+        min-width: 100%;
+        min-height: 100%;
+        @include media-query(palm){
+            margin-top: -22%;
+        }
+    }
+    &__wrapper {
+        margin-left: 190px;
+        @include media-query(palm){
+            margin-left: 0;
+        }
+    }
+    &__category-link {
+        @extend .epsilon;
+        color: $color-proddev-pink;
+
+        &--backstage {
+            color: $color-category-backstage;
+        }
+        &--case-studies {
+            color: $color-category-casestudies;
+        }
+        &--news {
+            color: $color-category-news;
+        }
+        &--office-fun {
+            color: $color-category-officefun;
+        }
+        &--work {
+            color: $color-category-work;
+        }
+    }
+    &__time {
+        @extend .epsilon;
+
+    }
+    &__title {
+        @extend .beta;
+        padding: 20px 0;
+        @include media-query(palm){
+            padding: 10px 0 0;
+            margin-bottom: 10px;
+        }
+    }
+    &__summary {
+        p {
+            @extend .delta;
+            @include media-query(palm){
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &__link {
+        @extend .delta;
+        text-decoration: underline;
+        &:hover {
+            color: black;
+        }
+        @include media-query(palm){
+            margin-top: 5px;
+        }
+    }
+}
+
+.blog-post {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &__title {
+        @extend .beta;
+    }
+    &__footer {
+        margin-top: 100px;
+        background: #f0f0f0;
+        @include sneddisTop(-4, 180px);
+        padding-bottom: 100px;
+    }
+    &__nav {
+        @include transform(translateZ(0));
+        display: block;
+        text-align: center;
+        width: 300px;
+        &__imgwrapper {
+            @include transform(translateZ(0));
+            margin: 30px auto 10px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #ff0066;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                @include transition(opacity 200ms linear);
+            }
+            &:before {
+                content: " ";
+                position: absolute;
+                background: transparent url(/img/blog/arrow-left-retina.png) no-repeat 0px 0px;
+                background-size: 23px 38px;
+                width: 23px;
+                height: 38px;
+                top: 50%;
+                left: 50%;
+                margin: -18px 0 0 -11px;
+                @include transform(translateY(30px));
+                opacity: 0;
+                @include transition(transform 200ms linear 150ms, opacity 200ms linear 150ms);
+            }
+        }
+        &--next {
+            float: right;
+            .blog-post__nav__imgwrapper:before {
+                background-image: url(/img/blog/arrow-right-retina.png);
+            }
+        }
+
+        &--prev {
+        }
+
+        &__category {
+            &--backstage {
+                color: $color-category-backstage;
+            }
+            &--case-studies {
+                color: $color-category-casestudies;
+            }
+            &--news {
+                color: $color-category-news;
+            }
+            &--office-fun {
+                color: $color-category-officefun;
+            }
+            &--work {
+                color: $color-category-work;
+            }
+        }
+
+        &__meta {
+            @extend .epsilon;
+            letter-spacing: 0;
+            color: #666;
+            margin: 35px 0 0;
+        }
+        &__title {
+            @extend .delta;
+        }
+
+        &:hover {
+            .blog-post__nav__imgwrapper img {
+                opacity: 0.2;
+            }
+            .blog-post__nav__imgwrapper:before {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
+    }
+
+
+
+    p {
+        @extend .container--tight;
+        @extend .delta;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        @extend .container--tight;
+        @extend .beta;
+        margin-right: auto;
+        margin-left: auto;
+        text-transform: uppercase;
+    }
+    a {
+        color: #222;
+        &:hover {
+            color: black;
+            text-decoration: underline;
+        }
+    }
+}

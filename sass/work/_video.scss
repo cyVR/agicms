@@ -1,0 +1,55 @@
+.work-video {
+    background: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    overflow: hidden;
+
+    &__video {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        text-align: center;
+        opacity: 0;
+        line-height: 1;
+
+        .media {
+            margin: 0 !important;
+            display: block;
+        }
+
+    }
+
+    &__content {
+
+        padding: 100px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:  top center;
+
+        .work-video--carlsberg & {
+            background-color: #321651;
+            background-image: url(/img/work/case/carlsberg/video-bg.jpg);
+        }
+    }
+    &:hover {
+        .play-icon {
+            @include transform(scale(1.1));
+        }
+    }
+}
+
+.play-icon {
+    display: inline-block;
+    background: transparent url(/img/work/case/shared/icon_play.svg) no-repeat top left;
+    color: transparent;
+    width: 73px;
+    @include transition(transform ease-out 250ms);
+    @include media-query(palm) {
+        width: 26px;
+    }
+}

@@ -1,0 +1,25 @@
+<header class="main-header">
+    <div class="main-header__content">
+        <div class="container text--light">
+
+            {{ if isset .Params "pretitle" }}
+                <h2 class="main-header__pretitle">{{ .Params.pretitle }}</h2>
+            {{ end }}
+
+            <h1 class="main-header__title">{{ .Title }}</h1>
+
+            {{ if isset .Params "subtitle" }}
+                <h2 class="main-header__subtitle">{{ .Params.subtitle }}</h2>
+            {{ end }}
+
+        </div>
+    </div>
+    {{ if isset .Params "video" }}
+        <video width="1440" height="700" autoplay="autoplay" loop="loop" class="main-header__video">
+            <source src="/video/{{ .Params.video }}video.mp4"  type="video/mp4">
+            <source src="/video/{{ .Params.video }}video.mp4"  type="video/webm">
+        </video>
+    {{ end }}
+</header>
+
+<div class="main-content">

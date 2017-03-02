@@ -1,0 +1,305 @@
+.page--work .main-header {
+    @include vhFejk(50);
+}
+
+
+.content--page-work {
+
+    position: relative;
+
+    p {
+        @extend .delta;
+    }
+
+    h2 {
+        @extend .beta;
+    }
+
+    .work {
+
+        &__header-image {
+            display: block;
+            margin: 0 auto;
+            z-index: 5;
+            max-width: 70%;
+            margin-top: -25%;
+            @include media-query(desk){
+                max-width: 500px;
+                margin-top: -17%;
+            }
+            padding-top: 30px;
+            @media screen and ( max-height: 1000px ){
+                padding-top: 100px;
+            }
+            @media screen and ( max-height: 700px ){
+                padding-top: 150px;
+            }
+            @media screen and ( max-height: 600px ){
+                padding-top: 160px;
+            }
+            @media screen and ( max-width: 590px ){
+                padding-top: 0;
+            }
+
+        }
+        &__tldr {
+            &__pretitle {
+                @extend .epsilon;
+            }
+            padding: 50px 0 100px;
+            @extend .gamma;
+            text-align: center;
+            h2 {
+                @extend .gamma;
+                font-weight: 100;
+                line-height: 125%;
+                @include media-query(palm) {
+                    font-size: $palm-h2-size;
+                }
+            }
+            .btn {
+                @extend .epsilon;
+                line-height: 3;
+                @include btnColors(#333, white);
+
+            }
+            @include media-query(palm){
+                padding-bottom: 50px;
+            }
+        }
+
+        &__divider {
+            @extend .text--light;
+            background-size: cover;
+            @include media-query(palm) {
+                height: auto;
+            }
+            &__pretitle {
+                @extend .epsilon;
+            }
+            &__title {
+                @extend .kilo;
+                margin-bottom: 0;
+                @include media-query(palm) {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        &__section {
+            background: white;
+            padding: 100px 0;
+            @include media-query(palm) {
+                padding: 50px 0;
+            }
+
+            &--tilted {
+                &--top {
+                    @include sneddisTop(-5, 200px);
+                    padding-bottom: 100px;
+                }
+
+                &--bottom {
+                    padding-top: 100px;
+                    @include sneddis(-5, 200px);
+                }
+            }
+
+            &--three-points {
+                @extend .text--light;
+                background: #222;
+                text-align: center;
+                @extend .delta;
+                font-weight: 300;
+
+                .grid__item {
+                    padding-left: 24px+15px;
+                    padding-right: 15px;
+                }
+                @include media-query(palm) {
+                    .grid__item {
+                        padding-bottom: 30px;
+
+                    }
+                }
+                strong {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+            &--awards {
+                @extend .epsilon;
+                text-align: center;
+                background: #f0f0f0;
+                margin: 0;
+
+                .grid__item {
+                    position: relative;
+                    height: 100%;
+
+                    &:before, &:after {
+                        content: " ";
+                        display: block;
+                        background: #ddd;
+
+                        position: absolute;
+                        right: -10px;
+                        bottom: 0;
+                    }
+
+                    &:before {
+                       width: 1px;
+                       top: 0;
+                    }
+
+                    &:after {
+                       height: 1px;
+                       left: 10px;
+                    }
+
+                    &:last-child:before,
+                    &:last-child:after {
+                        display: none;
+                    }
+
+                    @include media-query(palm) {
+                        &:nth-child(2n + 2):before {
+                            display: none;
+                        }
+
+                        &:nth-last-child(-n + 2):after {
+                            display: none;
+                        }
+                    }
+
+                    @include media-query(lap-and-up) {
+                        &:nth-child(4n + 4):before {
+                            display: none;
+                        }
+
+                        &:nth-last-child(-n + 4):after {
+                            display: none;
+                        }
+                    }
+
+                    .page--work--billogram & {
+                        @include media-query(palm) {
+                            &:before,
+                            &:after {
+                                display: block;
+                            }
+
+                            &:nth-child(2):before {
+                                display: none;
+                            }
+
+                            &:nth-child(3):before,
+                            &:nth-child(3):after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__tech-img {
+                display: block;
+                width: 50%;
+                margin: 0 auto 25%;
+            }
+
+            &--grandfinale {
+                height: 700px;
+                @extend .text--light;
+                @extend .text--center;
+                background-size: cover !important;
+                @include media-query(palm){
+                    height: auto;
+                    padding: 100px 0;
+                }
+                &__header {
+                    @extend .epsilon;
+                }
+                &__copy {
+                    @extend .kilo;
+                    @include media-query(palm){
+                        font-size: $palm-h2-size;
+                    }
+                }
+            }
+
+            &--carlsberg {
+                &--video {
+                    background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
+                }
+                &--trivia {
+                    background: #321651 url(/img/work/case/carlsberg/party-bg.jpg) no-repeat top center;
+                }
+                &--three-points {
+                    background: #071e24;
+                }
+            }
+
+        }
+
+        &__image {
+            &--fullsize {
+                width: 100%;
+                padding-bottom: 100px;
+                @include media-query(lap){
+                    padding-bottom: 70px;
+                }
+                @include media-query(palm){
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+
+}
+
+.page--work {
+    .main-content {
+        a {
+            font-weight: bold;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+.page--work {
+    &--wheres-the-party {
+        .main-header {
+            background-color: #333;
+            background-image: url(/img/work/case/carlsberg/carlsberg-bg.jpg);
+        }
+    }
+    &--sj\.se {
+        .main-header {
+            background-color: #3094C3;
+            background-image: url(/img/work/case/sj/asset_headerbg.jpg);
+        }
+    }
+}
+@import "work/aco";
+@import "work/bigblog";
+@import "work/billogram";
+@import "work/build-with-chrome";
+@import "work/ericsson";
+@import "work/gosf";
+@import "work/hobbit";
+@import "work/mcdonalds";
+@import "work/minicooper";
+@import "work/only";
+@import "work/samsung";
+@import "work/slack-channel";
+@import "work/sj";
+@import "work/uppsalastudent";
+@import "work/yogobe";
+@import "work/suisse";
+

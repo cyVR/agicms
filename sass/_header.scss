@@ -1,0 +1,61 @@
+.main-header {
+    @extend .text--center;
+    @extend .vc;
+    width: 100%;
+    background: #d91853 no-repeat top center;
+    @include vhFejk(75);
+    @include media-query(palm){
+        height: 300px;
+    }
+
+    padding: 0;
+    background-size: cover;
+    display: block;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+
+    //fixes overflow-hidden issue in firefox
+    @include transform(translate3d(0,0,0));
+
+    &__content {
+        @extend .vc__content;
+        position: relative;
+        z-index: 10;
+    }
+    &__title {
+        @extend .giga;
+    }
+    &__pretitle {
+        @extend .epsilon;
+    }
+    &__subtitle {
+        @extend .beta;
+    }
+    &__category {
+        @extend .epsilon;
+    }
+
+    &__video {
+        z-index: 5;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        max-height: none;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        @include transition(opacity 100ms ease);
+        @include transform(translate3d(-50%,-50%,0));
+
+        &--loaded {
+            opacity: 1;
+        }
+        @include media-query(palm){
+            display: none;
+        }
+    }
+}

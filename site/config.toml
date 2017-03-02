@@ -1,0 +1,89 @@
+baseurl = "http://agigen.se"
+MetaDataFormat = "json"
+languageCode = "en-us"
+title = "Agigen"
+pluralizeListTitles = false
+[params]
+  version = "141009_1536"
+
+[indexes]
+  tag = "tags"
+  group = "groups"
+
+[Taxonomies]
+    category = "categories"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 0
+    identifier = "main"
+
+[[menu.main]]
+    name = "Services"
+    identifier = "services"
+    weight = 100
+    url = "#"
+
+[[menu.main]]
+    name = "Web Production"
+    parent = "services"
+    url = "/services/web-production"
+    weight = 100
+    identifier = "webprod"
+
+[[menu.main]]
+    name = "Product development"
+    parent = "services"
+    url = "/services/product-development"
+    weight = 200
+    identifier = "proddev"
+
+[[menu.main]]
+    name = "Agigen Labs"
+    parent = "services"
+    url = "/services/labs"
+    weight = 300
+    identifier = "labs"
+
+[[menu.main]]
+    name = "Learn more"
+    identifier = "about"
+    weight = 300
+    url = "#"
+
+[[menu.main]]
+    name = "Case studies"
+    weight = 200
+    url = "/work/"
+    parent = "about"
+    identifier = "cases"
+
+[[menu.main]]
+    name = "About us"
+    weight = 400
+    url = "/about/"
+    parent = "about"
+    identifier = "aboutus"
+
+[[menu.main]]
+    name = "Our diary"
+    weight = 450
+    url = "/blog/"
+    parent = "about"
+    identifier = "blog"
+
+[[menu.main]]
+    name = "Get in touch"
+    identifier = "getintouch"
+    weight = 500
+    url = "#"
+
+[[menu.main]]
+    name = "Contact us"
+    url = "/contact/"
+    parent = "getintouch"
+    identifier = "contactus"
+
+
+

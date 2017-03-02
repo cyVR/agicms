@@ -1,0 +1,38 @@
+.page--work {
+    &--uppsalastudent {
+        .main-header {
+            background-color: #3d2550;
+            background-image: url(/img/work/case/uppsalastudent/uppsala-bg.jpg);
+            &__title {
+                @include media-query(palm){
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+.content--page-work  {
+    .work__header-image--uppsalastudent {
+        max-width: 680px;
+
+        @media only screen and (max-width: 1180px) {
+            max-width: 68%;
+        }
+    }
+
+    .work__section--uppsalastudent--three-points {
+        background: #434343;
+    }
+
+    .work__section--uppsalastudent--grandfinale {
+        background-color: #d78404;
+        background-image: url(/img/work/case/uppsalastudent/trivia-bg.jpg);
+    }
+}
+
+.image-wrapper--uppsalastudent.image-wrapper--strikethrough {
+    &:before {
+        background: #f8f8f6;
+    }
+}

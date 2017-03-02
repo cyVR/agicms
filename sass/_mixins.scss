@@ -1,0 +1,110 @@
+@mixin btnColors($border, $background) {
+    border-color: $border;
+    color: $border;
+    background-color: transparent;
+    &:hover {
+        background-color: $border;
+        color: $background;
+    }
+}
+
+
+@mixin sneddis($degrees, $height:100px, $background-color:inherit) {
+    position: relative;
+    .container {
+        z-index: 2;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        background-color: $background-color;
+        width: 200%;
+        height: $height;
+        position: absolute;
+        bottom: -$height/2;
+        left: -50%;
+        @include transform(rotate(#{$degrees}deg));
+        z-index: 1;
+    }
+}
+
+@mixin sneddisTop($degrees, $height:100px, $background-color:inherit) {
+    position: relative;
+    .container {
+        z-index: 2;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        background-color: $background-color;
+        width: 200%;
+        height: $height;
+        position: absolute;
+        top: -$height/2;
+        left: -50%;
+        @include transform(rotate(#{$degrees}deg));
+        z-index: 1;
+    }
+}
+
+
+@mixin fotoSneddis($degrees, $height:100px) {
+    position: relative;
+    .container {
+        z-index: 2;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        background-color: #fff;
+        width: 120%;
+        height: $height;
+        position: absolute;
+        top: -$height;
+        left: -10%;
+
+        @include media-query(lap-and-up){
+            @include transform(rotate(#{$degrees}deg));
+            @include transition(all 300ms $ease-out-quad);
+            @include transform-origin(left bottom);
+
+        }
+        z-index: 20;
+    }
+    &:hover:after {
+        @include transform(rotate(0deg));
+    }
+}
+
+
+@mixin vhFejk($vh) {
+    $i: 2000;
+    @while $i > 500 {
+        @media screen and ( max-height: #{$i}px ){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+
+@mixin vhFejkPortable($vh) {
+    $i: 2000;
+    @while $i > 500 {
+        @media screen and ( max-height: #{$i}px ) and (max-width: $desk-start - 1){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+
+@mixin vhFejkPalm($vh) {
+    $i: 2000;
+    @while $i > 500 {
+        @media screen and ( max-height: #{$i}px ) and (max-width: $lap-start - 1){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+
+

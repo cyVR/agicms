@@ -1,0 +1,46 @@
+$samsung-case-color: #F6C365;
+
+.page--work--samsung {
+    .main-header {
+        background-color: #333;
+        background-image: url(/img/work/case/samsung/header.jpg);
+        background-position: center bottom;
+    }
+}
+
+.content--page-work {
+    .work__section {
+        &--samsung {
+            &--three-points {
+                background: #f0f0f0;
+                color: #000;
+            }
+        }
+    }
+    .work__header-image--samsung {
+        margin-top: -13%;
+        @include media-query(portable){
+            margin-top: -25%;
+        }
+        @include media-query(palm){
+            max-width: 100%;
+        }
+    }
+}
+
+.image-wrapper--samsung.image-wrapper--strikethrough {
+    &:before {
+        background: $samsung-case-color;
+        @include transform(translateY(-40%));
+        max-height: 60%;
+    }
+}
+
+.image-wrapper--samsung-city.image-wrapper--strikethrough {
+    &:before {
+        height: 340px;
+        background: #fcfcfc url(/img/work/case/samsung/asset_stockholm_long.jpg) no-repeat top center;
+        background-size: cover;
+        @include transform(translateY(-51.25%));
+    }
+}

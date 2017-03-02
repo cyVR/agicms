@@ -1,0 +1,263 @@
+.page--we-are-agigen .main-header {
+    background: #ddd url(/img/about/header.jpg) no-repeat top center;
+    background-size: cover;
+    @include vhFejk(75);
+    @include vhFejkPortable(50);
+    @include vhFejkPalm(40);
+    .main-header__content {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+    }
+    .main-header__title {
+        @extend .epsilon;
+    }
+}
+
+.about-copy {
+    .giga {
+        padding-bottom: 50px;
+        color: #252525;
+    }
+    @extend .delta;
+}
+
+.section {
+    &--about-divider-office {
+        background: #db0158 url(/img/about/about-office-bg.jpg) no-repeat top center;
+        background-size: cover;
+        padding-bottom: 300px;
+        @include media-query(portable){
+            padding-bottom: 160px;
+            background-position: bottom center;
+        }
+        @include media-query(palm){
+            padding-bottom: 120px;
+        }
+    }
+    &--about-divider-love {
+        background: #2e3e40 url(/img/about/about-love.jpg) no-repeat top center;
+        background-size: cover;
+        padding: 240px 0;
+        @include media-query(portable) {
+            padding: 180px 0;
+        }
+        @include media-query(palm) {
+            padding: 50px 0;
+        }
+    }
+    &--big-ideas {
+        background: white;
+        .container {
+            z-index: 3;
+        }
+        @include sneddisTop(-6, 240px);
+        padding-top: 50px;
+        @include media-query(portable){
+            &:after {
+                top: -80px;
+            }
+            padding: 0;
+        }
+        @include media-query(lap){
+            padding-top: 30px;
+        }
+    }
+    &--about-team {
+        padding-top: 0;
+    }
+    &--about-gallery {
+        @include media-query(palm) {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+.team-member {
+    text-align: center;
+    padding-top: 70px;
+    @include media-query(palm) {
+        padding-top: 40px;
+    }
+
+    &__photoframe-wrapper {
+        margin: 0 auto;
+    }
+
+    &__photo {
+        z-index: 1;
+        &--hover {
+            z-index: 10;
+            @include media-query(lap-and-up){
+                opacity: 0;
+                @include transition(opacity 300ms $ease-out-quad);
+            }
+        }
+    }
+
+    &:hover &__photo--hover {
+        opacity: 1;
+    }
+    &__photoframe {
+        width: 73%;
+        padding-bottom: 73%;
+        box-sizing: content-box;
+        height: 0;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: $base-spacing-unit;
+        @include media-query(palm){
+            margin-bottom: 15px;
+            width: 85%;
+            padding-bottom: 85%;
+        }
+
+        img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        @include fotoSneddis(8, 80px);
+
+        .team-member--johan  &:after ,
+        .team-member--miriam &:after ,
+        .team-member--oscar  &:after ,
+        .team-member--erika &:after ,
+        .team-member--albin &:after {
+            display: none;
+        }
+
+        .team-member--kiwi   &:after ,
+        .team-member--daniel &:after ,
+        .team-member--sven &:after ,
+        .team-member--max &:after {
+            @include media-query(lap-and-up){
+                top: auto;
+                bottom: -80px;
+                @include transform(rotate(-8deg));
+            }
+        }
+
+        .team-member--kiwi &:after ,
+        .team-member--max  &:after {
+            @include media-query(lap-and-up){
+                @include transform-origin(right top);
+                @include transform(rotate(8deg));
+            }
+        }
+        .team-member--viktor &:after {
+            @include media-query(lap-and-up){
+                @include transform(rotate(-8deg));
+                @include transform-origin(right bottom);
+            }
+        }
+
+    }
+    &--kiwi:hover &__photoframe:after,
+    &--max:hover &__photoframe:after,
+    &--daniel:hover &__photoframe:after,
+    &--viktor:hover &__photoframe:after ,
+    &--sven:hover &__photoframe:after {
+        @include transform(rotate(0deg));
+    }
+
+
+
+
+    &__contact {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        padding: 20px;
+        z-index: 30;
+        width: 100%;
+        @include media-query(lap-and-up){
+            opacity: 0;
+            @include transform(translateY(30px));
+        }
+        @include media-query(palm) {
+            padding: 0;
+        }
+
+        @include transition(opacity 300ms $ease-out-quad 200ms, transform 300ms $ease-out-quad 200ms);
+        &__item {
+            width: 46px;
+            height: 46px;
+
+
+
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            background: rgba(255,255,255,0.4) url(/img/about/mail.svg) no-repeat center center;
+            font: 1px;
+            color: transparent;
+            overflow: hidden;
+            text-align: left;
+            text-indent: -1000px;
+            &--phone {
+                background-image: url(/img/about/phone.svg);
+            }
+            &:hover {
+                background-color: rgba(255,255,255,0.6);
+            }
+            &:active {
+                background-color: rgba(255,255,255,0.3);
+            }
+
+            @include media-query(palm) {
+                width: 30px;
+                height: 30px;
+                background-size: 15px;
+            }
+        }
+    }
+
+    &:hover &__contact {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+
+    &__name {
+        @extend .epsilon;
+        text-align: center;
+        box-sizing: content-box;
+        line-height: 125%;
+
+        @include media-query(palm) {
+            margin-bottom: 0;
+        }
+
+        img {
+            height: 100%;
+            display: inline-block;
+            display: none;
+
+
+            // compensate for jonas long schlong
+            .team-member--jonas & {
+                height: 200%;
+                margin-left: -20%;
+            }
+        }
+    }
+    &__title {
+        @extend .delta;
+
+        padding-top: 10px;
+        @include media-query(palm) {
+            padding-top: 5px;
+            font-size: 14px;
+        }
+        font-weight: 100;
+        color: #676767;
+        line-height: 125%;
+    }
+}
+
+

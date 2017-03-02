@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+button {
+    outline: none;
+    background: transparent;
+    border: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+    a:focus {
+        outline: none;
+    }
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+}
+
+
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta , .kilo {
+    font-family: "proxima-nova";
+    font-weight: normal;
+}
+.kilo {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.alpha {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.beta {
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.gamma {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.epsilon {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@include media-query(lap){
+    .giga {
+        font-size: $lap-giga-size;
+    }
+    .alpha {
+        font-size: $lap-h1-size;
+    }
+    .beta {
+        font-size: $lap-h2-size;
+    }
+    .gamma {
+        font-size: $lap-h3-size;
+    }
+    .delta {
+        font-size: $lap-h4-size;
+    }
+    .epsilon {
+        font-size: $lap-h5-size;
+    }
+    .zeta {
+        font-size: $lap-h6-size;
+    }
+}
+
+@include media-query(palm){
+    .giga {
+        font-size: $palm-giga-size;
+    }
+    .alpha {
+        font-size: $palm-h1-size;
+    }
+    .beta {
+        font-size: $palm-h2-size;
+    }
+    .gamma {
+        font-size: $palm-h3-size;
+    }
+    .delta {
+        font-size: $palm-h4-size;
+    }
+    .epsilon {
+        font-size: $palm-h5-size;
+    }
+    .zeta {
+        font-size: $palm-h6-size;
+    }
+}

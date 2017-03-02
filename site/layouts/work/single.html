@@ -1,0 +1,24 @@
+{{ partial "head.html" . }}
+{{ partial "menu.html" . }}
+{{ partial "topbar.html" . }}
+{{ partial "header.html" . }}
+
+<div class="content content--page-work">
+    {{ .Content }}
+
+    <section class="section section--start-contact">
+        <div class="container">
+            <div class="epsilon">Sound awesome?</div>
+            <h3 class="alpha">Get in touch</h3>
+
+            {{ partial "contact-grid.html" . }}
+
+        </div>
+    </section>
+
+</div>
+
+
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

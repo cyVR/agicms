@@ -1,0 +1,320 @@
+$suisse-red: #d33b37;
+
+// Styling of the case on the case study list page
+.case--list--suisse {
+    background: #d43b38;
+    @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
+    @include sneddisTop(-3, 140px, #ffffff);
+
+    padding: 140px 0 120px;
+    .btn {
+        @include btnColors(white, #1d55ac);
+    }
+    @include media-query(palm){
+        padding: 80px 0 60px;
+    }
+}
+.page--work--suisse-mania {
+    .main-header {
+        background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat center center;
+            // @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
+
+        color: #333;
+    }
+
+    .work__tldr {
+        margin-bottom: 0;
+        padding-bottom: 80px;
+        @include media-query(palm) {
+            padding-bottom: 20px;
+        }
+    }
+
+    .work__section {
+        padding: 80px 0;
+        @include media-query(palm) {
+            padding: 40px 0 20px;
+        }
+    }
+
+    .main-header__pretitle {
+        color: #333;
+    }
+    .main-header__title {
+        background: transparent url(/img/work/case/suisse/sm-header-logo.svg) no-repeat top center;
+        background-size: 100%;
+        display: block;
+        width: 66%;
+        padding-bottom: 9%; /* Correct aspect ratio for logo 66:9 */
+        overflow: hidden;
+        font-size: 1px;
+        text-indent: -1000px;
+        margin: 0 auto;
+    }
+
+    .main-content .container {
+        max-width: 1120px;
+    }
+    .main-content .container--tight {
+        max-width: 720px;
+    }
+
+    .grid.grid--suisse {
+        margin-left: -40px;
+        > .grid__item {
+            padding-left: 40px;
+
+        }
+    }
+}
+.content--page-work ,
+.content--page-work .work__tldr {
+    .btn--suisse {
+        border-radius: 8px;
+        background-color: $suisse-red;
+        color: #fff;
+        border: none;
+        @include media-query(palm) {
+            padding: 0 30px;
+        }
+        &:hover {
+            background-color: darken($suisse-red, 10%);
+            color: #fff;
+        }
+    }
+
+
+    .suisse-headline-darkbold {
+        @extend .gamma;
+        color: #333;
+        font-weight: bold;
+    }
+    .suisse-thin-gamma {
+        @extend .gamma;
+        font-weight: 100;
+    }
+
+    .suisse-content-image {
+        max-width: 95%;
+        @include media-query(palm) {
+            width: 100%;
+            margin-bottom: 30px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    .suisse-small-headline {
+        @extend .epsilon;
+        color: #0b83fb;
+        padding-bottom: 10px;
+    }
+        .suisse-small-headline--red {
+            color: $suisse-red;
+
+        }
+
+    .suisse-objects-image {
+        @include media-query(lap-and-up) {
+            margin: 0 auto 100px;
+        }
+    }
+
+    .section-maina-everywhere-headline {
+        @extend .epsilon;
+        color: $suisse-red;
+    }
+
+
+    .section-production-blue {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        background: #0b83fb url(/img/work/case/suisse/suissem_break-production.jpg) no-repeat top center;
+        background-size: cover;
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+        .section-production-blue__headline {
+            @extend .gamma;
+            color: #fff;
+            font-weight: bold;
+
+        }
+        .section-production-blue__desc {
+            color: #fff;
+        }
+
+    .suisse-world-images {
+        img {}
+    }
+
+
+    .suisse-version {
+        text-align: center;
+    }
+        .suisse-version__image {
+            max-width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+        .suisse-version__title {
+            text-transform: uppercase;
+            padding: 30px 0 20px;
+        }
+        .suisse-version__desc {}
+
+    .suisse-animals {
+        @include media-query(lap-and-up) {
+            margin: 0 auto;
+            max-width: 66%;
+            display: block;
+        }
+    }
+
+    .suisse-for-kids-image {
+        max-width: 42%;
+        @include media-query(palm) {
+            max-width: 100%;
+        }
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    .suisse-team {
+        text-align: center;
+    }
+        .suisse-team__badge-link {}
+        .suisse-team__badge {
+            width: 35%;
+            margin: 0 auto;
+        }
+        .suisse-team__headline {
+            color: #333;
+            padding: 30px 0;
+            text-transform: uppercase;
+        }
+        .suisse-team__desc {}
+        .suisse-team__link {}
+}
+
+
+.sm-padding--left {
+    @include media-query(lap-and-up) {
+        padding-left: 90px;
+    }
+}
+.sm-padding--right {
+    @include media-query(lap-and-up) {
+        padding-right: 90px;
+    }
+}
+
+
+.suisse-goo {
+    position: relative;
+    &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 78.5%;
+        background: transparent;
+    }
+}
+.suisse-goo-iframe {
+    width: 100%;
+    border: none;
+    height: 600px;
+    background: white;
+
+    @include media-query(palm) {
+        height: 450px;
+    }
+}
+
+
+.video-with-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0 auto;
+
+    @include media-query(palm) {
+        width: 75%;
+        padding-bottom: 75%;
+        margin-bottom: 30px;
+    }
+}
+    .video-with-image__video {
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f0f0f0;
+    }
+    .video-with-image__image {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        @include transform(translate(50%, -50%));
+        width: 22%;
+        @include media-query(palm) {
+            width: 35%;
+        }
+    }
+        .video-with-image__image--left {
+            right: auto;
+            left: 0;
+            @include transform(translate(-50%, -50%));
+        }
+
+
+.sound-button {
+    @extend .epsilon;
+
+
+    border: 2px solid #0b83fb;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: #0b83fb;
+    display: inline-block;
+    padding: 16px 30px;
+    min-width: 180px;
+    text-align: center;
+    margin: 0 10px 10px 0;
+
+    @include media-query(palm) {
+        display: block;
+        width: 100%
+    }
+
+
+    &:hover {
+        background: #0b83fb;
+        color: #fff !important;
+        .sound-button__flag {
+            &:before {
+                content: ' ';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: red;
+            }
+        }
+    }
+}
+    .sound-button__flag {
+        position: relative;
+        vertical-align: middle;
+        top: -2px;
+        padding-right: 5px;
+    }

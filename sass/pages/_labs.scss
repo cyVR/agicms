@@ -1,0 +1,60 @@
+.page {
+    &--agigen-labs {
+        .main-header {
+            background-color: $color-labs-orange;
+            background-image: url(/img/labs/top-bg.jpg);
+            @include vhFejk(50);
+        }
+    }
+}
+
+.section {
+    &--labs-oddset {
+        background: #252525;
+        padding-bottom: 140px;
+        @include media-query(palm) {
+            padding-bottom: 60px;
+        }
+        .alpha {
+            padding-bottom: 50px;
+            @include media-query(portable) {
+                padding-bottom: 20px;
+            }
+        }
+
+        .btn {
+            &:hover {
+                color: #222;
+            }
+        }
+
+        @include sneddis(8, 270px);
+    }
+    &--labs--agigen-chat {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        background: $color-labs-orange url(/img/work/case/slack/pattern-repeat-xy-light.png) repeat center center;
+        &__illustration {
+            position: relative;
+            z-index: 5;
+            max-width: 400px;
+        }
+
+        .btn:hover {
+            color: $color-labs-orange;
+        }
+    }
+
+
+    &--labs-github {
+        padding-bottom: 150px;
+        @include media-query(palm) {
+            padding-bottom: 60px;
+        }
+    }
+}
+
+.labs-github-illustration {
+    width: 400px;
+
+}

@@ -1,0 +1,197 @@
+.case--fullwidth--samsung ,
+.section--start-intro {
+    z-index: 10;
+}
+
+$front-scale: 2.2;
+$middle-scale: 1.3;
+// $chrome-rotate: -8deg;
+// $samsung-rotate: 14deg;
+
+$chrome-rotate: 0deg;
+$samsung-rotate: 0deg;
+
+.section--start-proddev ,
+.section--start-webprod {
+    .container {
+        position: relative;
+        z-index: 50;
+        pointer-events: none;
+    }
+    .btn {
+        pointer-events: auto;
+        @include media-query(palm-and-up){
+            opacity: 0;
+            @include transform(translateY(-80px));
+            @include transition(all 250ms ease, opacity 250ms ease-out 1100ms);
+        }
+    }
+}
+
+
+
+.section--start-webprod {
+    @extend .bgcolor--blue;
+    .btn {
+        @include btnColors(white, $color-webprod-blue);
+    }
+}
+
+.lax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transform(scale($middle-scale));
+    //@include transform(scale(0));
+    opacity: 0;
+
+    .browser--ie & {
+        display: none;
+    }
+
+
+    &--back {
+        pointer-events: none;
+        z-index: 5;
+    }
+    &--middle {
+        z-index: 10;
+    }
+    &--front {
+        z-index: 20;
+        pointer-events: none;
+        @include transform(scale($front-scale));
+    }
+
+    @include transform-origin(center center);
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__link {
+        overflow: hidden;
+        text-indent: -1000px;
+        text-align: left;
+        position: absolute;
+        background: transparent url() no-repeat top left;
+        @media only screen and (max-width: 900px) {
+            display: none;
+        }
+
+        &--chrome {
+            // height: 600px;
+            // width: 889px;
+
+            width: 270px;
+            height: 403px;
+
+            @media only screen and (max-width: 1700px) {
+                width: 150px;
+                height: 222px;
+            }
+            @media only screen and (max-width: 1200px) {
+                width: 100px;
+                height: 149px;
+            }
+            top: 30%;
+            right: 15%;
+            @include transform(rotate($chrome-rotate));
+            background-image: url(/img/start/webprod/chrome2.png);
+            background-size: cover;
+            &:hover {
+                @include animation(pulsateChrome 1800ms $ease-in-out-sine);
+            }
+        }
+        &--samsung {
+            width: 205px;
+            height: 392px;
+
+            @media only screen and (max-width: 1700px) {
+                width: 160px;
+                height: 305px;
+            }
+            @media only screen and (max-width: 1200px) {
+                width: 80px;
+                height: 153px;
+            }
+            top: 24%;
+            left: 17%;
+            @include transform(rotate($samsung-rotate));
+            &:hover {
+                @include animation(pulsateSamsung 1800ms $ease-in-out-sine);
+            }
+            background-image: url(/img/start/webprod/sj.png);
+            background-size: cover;
+        }
+
+        &:hover {
+            @include animation-iteration-count(infinite);
+        }
+    }
+
+
+    img {
+        pointer-events: none;
+        max-width: none;
+        width: auto;
+        height: 100%;
+    }
+}
+
+@include media-query(palm) {
+    .lax {
+        display: none;
+    }
+}
+
+.device--ios .lax {
+    display: none;
+}
+
+
+.in-view--partial {
+
+    .container {
+        opacity: 1;
+    }
+    .btn {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+    .lax {
+        @include transform-origin(center center);
+        opacity: 1;
+
+        &--front  {
+            @include transition(all 1500ms linear);
+        }
+        &--middle {
+            @include transition(all 1500ms linear 250ms);
+        }
+        &--back   {
+            @include transition(all 1500ms linear 500ms);
+        }
+    }
+}
+
+@include keyframes(pulsateSamsung){
+    0%,100% {
+        @include transform(scale(1) rotate($samsung-rotate));
+    }
+    50% {
+        @include transform(scale(1.05) rotate($samsung-rotate));
+    }
+}
+@include keyframes(pulsateChrome){
+    0%,100% {
+        @include transform(scale(1) rotate($chrome-rotate));
+    }
+    50% {
+        @include transform(scale(1.05) rotate($chrome-rotate));
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"
+  ng-app="agigenApp"
+  ng-controller="menuCtrl"
+  ng-class="{'menu-open': menuVisible2}"
+  scroll-spy
+  ng-keyup="menuKeyup($event)"
+>
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {{ .Title }}
+    {{ if ne .Title "Agigen" }}
+    &middot; {{ .Site.Title }}
+    {{ end }}
+  </title>
+
+  <script>
+    if ("ActiveXObject" in window) {
+      document.getElementsByTagName('html')[0].className += ' browser--ie';
+    }
+
+    if (/ip(ad|hone|od)/gi.test(navigator.userAgent)) {
+      document.getElementsByTagName('html')[0].className += ' device--ios';
+    }
+
+    if (/firefox/gi.test(navigator.userAgent)) {
+      document.getElementsByTagName('html')[0].className += ' browser--firefox';
+    }
+  </script>
+
+  <!-- CSS -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/agigen.css?v={{ .Site.Params.version }}">
+
+  <!-- Icons -->
+
+  <link rel="shortcut icon" href="/img/utils/favicon.ico">
+
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/utils/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" href="/img/utils/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/img/utils/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/img/utils/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/img/utils/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/img/utils/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="msapplication-TileImage" content="/img/utils/mstile-144x144.png">
+
+  {{ partial "meta_sharing.html" . }}
+
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//agigen-slack-chat.appspot.com">
+
+  <script type="text/javascript" charset="utf-8">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7546376-1']);
+      _gaq.push(['_trackPageview']);
+  </script>
+
+  <script type="text/javascript" src="//use.typekit.net/orr5jqv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body
+class="
+page--{{ .Title | lower | urlize }}
+{{ if .IsNode }}
+  page--node
+{{ else }}
+  page--page
+  page--{{ .Type }}
+  page--{{ .Type }}--{{ .Title | lower | urlize }}
+{{ end }}
+">
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{{ "<!-- " | safeHtml }}
+
+                      `://.
+                    `+AAAAAo.
+                  `+AAAAAAAAAo.
+                `+AAAAAAAAAAAAAo.
+              `+AAAAAAAAAAAAAAAAAo.
+            `+AAAAAAAAAAAAAAAAAAAAAo.
+          `+AAAAAAAAAs/sAAAAAAAAAAAAAo.
+        `+AAAAAAAAAA+`  -oAAAAAAAAAAAAAo.
+      `+AAAAAAAAAAA+      .+AAAAAAAAAAAAAo.
+    `+AAAAAAAAAAAA/         .+AAAAAAAAAAAAAo.
+  `+AAAAAAAAAAAAA/            .+AAAAAAAAAAAAAo.
+ +AAAAAAAAAAAAAA/               -sAAAAAAAAAAAAAo`
+.AAAAAAAAAAAAAA+                 `+AAAAAAAAAAAAA/
+ /AAAAAAAAAAAAs`       `-/+agigen:`:AAAAAAAAAAAo`
+  `/AAAAAAAAAA.    .:+AAAAAAAAAAAAA+/AAAAAAAAo.
+    `/AAAAAAAo.-/oAAAAAAAAAAAAAAAAAAAAAAAAAo.
+      `/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo.
+        `/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAo.
+          `/AAAAAAAAAAAAAAAAAAAAAAAAAo.
+            `+AAAAAAAAAAAAAAAAAAAAAo.
+              `+AAAAAAAAAAAAAAAAAo.
+                `+AAAAAAAAAAAAAo.
+                  `+AAAAAAAAAo.
+                    `+AAAAAo.
+                      `-::`
+{{ "-->" | safeHtml }}
+
+

@@ -1,0 +1,152 @@
+.page--work--aco-moist {
+    .main-header {
+        background-image: url(/img/work/case/aco/top_fallback.jpg);
+        background-color: #868283;
+    }
+
+    .content--page-work .work__header-image {
+
+    }
+}
+.content--page-work {
+
+    .work__section {
+        &--aco--three-points {
+            background: #83c1ca;
+        }
+
+        &--aco--grandfinale {
+            background: #81BDC4 url(/img/work/case/aco/kitty_bg.jpg) no-repeat center right;
+            background-size: cover;
+        }
+    }
+    .aco--light-blue-bg {
+        background: #e8f5f7;
+        .work__section {
+            background: transparent;
+        }
+    }
+
+
+}
+
+.aco-how-it-works {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+
+    p {
+        margin-left: 60px;
+        margin-right: 16px;
+        @include media-query(palm) {
+            margin: 0;
+        }
+    }
+
+    &__number {
+
+        display: inline;
+        float: left;
+        padding-right: 10px;
+
+        &:after {
+            @include media-query(palm) {
+                content: ".";
+            }
+        }
+
+        @include media-query(lap-and-up) {
+            display: block;
+            background: #83c1ca;
+            color: white;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            padding-right: 0;
+            width: 40px;
+            border-radius: 50%;
+        }
+    }
+
+
+    &__number , p {
+        margin-top: 40px;
+        @include media-query(palm) {
+            margin-top: 20px;
+        }
+
+    }
+    .grid {
+        padding-bottom: 50px;
+    }
+}
+
+.aco-test {
+    background: #333333;
+    .work__section {
+        background: transparent;
+    }
+    &__frame {
+        background: #333333;
+        border: none;
+    }
+
+    &__disclaimer {
+
+        @include media-query(lap-and-up) {
+            margin-top: 40px;
+            border-top: 1px #656565 solid;
+            padding-top: 60px;
+        }
+
+
+        font-size: 12px !important;
+        color: #656565 !important;
+        font-weight: bold;
+
+        img {
+            margin-top: 20px;
+            width: 40px;
+        }
+    }
+}
+
+
+.aco-case-video {
+    display: block;
+    max-width: 100%;
+}
+
+.aco-card {
+    @include media-query(lap-and-up) {
+        min-height: 480px;
+    }
+    background: #f6f6f6;
+    padding: 60px 40px 40px;
+    margin-top: 30px;
+    position: relative;
+    &:before {
+        display: block;
+        content: " ";
+        border-radius: 50%;
+        border: 5px white solid;
+        position: absolute;
+        top: -30px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        background: transparent url(/img/work/case/aco/localization_logo.png) no-repeat 0px 0px;
+        background-size: 50px 50px;
+    }
+    h2 {
+        color: #6599cb;
+    }
+
+    &--youtube h2 {
+        color: #cf3327;
+    }
+    &--youtube:before {
+        background-image: url(/img/work/case/aco/youtube_logo.png);
+    }
+}
+

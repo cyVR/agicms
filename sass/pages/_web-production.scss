@@ -1,0 +1,192 @@
+.page {
+    &--web-production {
+        .main-header {
+            @include vhFejk(50);
+            background: $color-webprod-blue url(/video/bluevideo.jpg) no-repeat center center;
+            background-size: cover;
+        }
+    }
+}
+
+.section {
+    &--webprod-definition {
+        background-color: white;
+    }
+
+    &--webprod-offer {
+        background: $color-webprod-blue url(/img/webprod/blue-texture-retina.jpg) no-repeat top center;
+        backgorund-size: cover;
+        padding-top: 120px;
+        @include media-query(palm){
+            padding-top: 50px;
+        }
+        min-height: 740px;
+
+        &__illustration {
+            position: static;
+            width: 573px;
+            max-width: none;
+
+            @include media-query(palm) {
+                max-width: 100%;
+            }
+
+            &-wrapper {
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+
+                @include media-query(palm) {
+                    @include transform(translateY(0));
+                    position: relative;
+                    top: 0;
+                    display: block;
+                    max-width: 80%;
+                    margin: 0 auto;
+                }
+            }
+            &__animation {
+                position: absolute;
+                top: 6%;
+                left: 4%;
+                bottom: 23%;
+                right: 4%;
+                background-size: cover;
+            }
+        }
+
+        @include media-query(palm) {
+            min-height: 0;
+            padding-bottom: 100px;
+        }
+
+        .section__text {
+            max-width: 80%;
+
+            @include media-query(portable) {
+                max-width: none;
+            }
+        }
+    }
+
+    &--webprod-tools {
+        @include sneddisTop(-6, 240px, white);
+        padding: 50px 0 150px;
+        &__illustration {
+            position: absolute;
+            right: 20px;
+            top: -120px;
+            width: 450px;
+        }
+        @include media-query(palm) {
+            min-height: 0;
+            &:after {
+                top: -70px;
+            }
+            padding: 0 0 30px;
+        }
+    }
+
+    &--webprod-contact {
+        background-color: $color-webprod-blue;
+        background-image: url(/img/webprod/contact-texture.jpg);
+        .btn:hover {
+            color: $color-webprod-blue !important;
+        }
+    }
+
+    &--webprod-case {
+        @include media-query(palm) {
+            text-align: center;
+        }
+        .btn {
+            @include btnColors(#333, white);
+        }
+        &--samsung {
+            padding: 10px 0 60px;
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
+            .container {
+                z-index: 3;
+            }
+            &__illustration {
+                @include media-query(desk){
+                    padding-top: 140px;
+                    max-width: 90%;
+                }
+                @include media-query(portable) {
+                    max-width: 50%;
+                    padding-top: 30px;
+                }
+                @include media-query(palm){
+                    max-width: 70%;
+                }
+            }
+            @include media-query(palm) {
+                padding: 50px 0 100px;
+            }
+        }
+        &--sj {
+            @include sneddisTop(-3.5, 150px);
+            padding: 0;
+
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
+            background: #f0f0f0;
+            .container {
+                top: -60px;
+                @include media-query(palm) {
+                    top: auto;
+                }
+                z-index: 3;
+            }
+            &__illustration {
+                padding-bottom: 20px;
+                max-width: 86%;
+                @include media-query(portable) {
+                    max-width: 50%;
+                    padding-top: 30px;
+                }
+                @include media-query(palm) {
+                    max-width: 70%;
+                }
+            }
+
+            @include media-query(palm) {
+                padding-top: 0;
+            }
+        }
+        &--carlsberg {
+
+            &__illustration {
+                position: relative;
+                right: 16%;
+                max-width: 113%;
+                @include media-query(portable) {
+                    position: static;
+                    max-width: 70%;
+                    padding-top: 30px;
+                }
+                @include media-query(palm) {
+                    max-width: 70%;
+                }
+            }
+
+            @include media-query(palm) {
+                padding-top: 50px;
+            }
+        }
+    }
+    &--webprod-process {
+        figure {
+            position: relative;
+        }
+        .container {
+
+        }
+    }
+}
+
+@import "sections/webprod-timeline";

@@ -1,0 +1,59 @@
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="fb:admins" content="562883652,1205209891">
+<meta property="og:site_name" content="Agigen.se">
+<meta name="twitter:site" content="@agigen">
+<meta name="twitter:creator" content="@lendai">
+<meta property="og:url" content="{{ .Permalink }}">
+
+
+
+
+{{ if isset .Params "og_title" }}
+    <meta itemprop="name" content="{{ .Params.og_title }}">
+    <meta property="og:title" content="{{ .Params.og_title }}">
+    <meta name="twitter:title" content="{{ .Params.og_title }}">
+{{ else }}
+    {{ $title := "Agigen - We make the web a better place" }}
+    <meta itemprop="name" content="{{ $title }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta name="twitter:title" content="{{ $title }}">
+{{ end }}
+
+{{ if isset .Params "og_description" }}
+    <meta itemprop="description" content="{{ .Params.og_description }}">
+    <meta name="description" content="{{ .Params.og_description }}">
+    <meta property="og:description" content="{{ .Params.og_description }}">
+    <meta name="twitter:description" content="{{ .Params.og_description }}">
+{{ else }}
+    {{ if eq .Title "Blog" }}
+        {{ $description := "Stay up to date with the adventures happening at Agigen - a creative web agency based in Stockholm, Sweden." }}
+        <meta itemprop="description" content="{{ $description }}">
+        <meta name="description" content="{{ $description }}">
+        <meta property="og:description" content="{{ $description }}">
+        <meta name="twitter:description" content="{{ $description }}">
+    {{ else }}
+        {{ $description := "Creative web agency based in Stockholm, Sweden. We create beautiful design, powerful code and cool ideas." }}
+        <meta itemprop="description" content="{{ $description }}">
+        <meta name="description" content="{{ $description }}">
+        <meta property="og:description" content="{{ $description }}">
+        <meta name="twitter:description" content="{{ $description }}">
+    {{ end }}
+{{ end }}
+
+{{ if isset .Params "og_image" }}
+    <meta itemprop="image" content="{{ .Params.og_image }}">
+    <meta property="og:image" content="{{ .Params.og_image }}">
+    <meta name="twitter:image" content="{{ .Params.og_image }}">
+{{ else }}
+    {{ $image := "http://agigen.se/img/utils/opengraph.jpg "}}
+    <meta itemprop="image" content="{{ $image }}">
+    <meta property="og:image" content="{{ $image }}">
+    <meta name="twitter:image" content="http://agigen.se/img/utils/summary_card_twitter.jpg">
+{{ end }}
+
+
+
+
+
+

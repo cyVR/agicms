@@ -1,0 +1,162 @@
+{{ partial "head.html" . }}
+{{ partial "menu.html" . }}
+{{ partial "topbar.html" . }}
+{{ partial "header-start.html" . }}
+
+<section class="section section--center-content section--start section--start-intro">
+    <div class="section__content">
+        <h1 class="accessibility">Agigen - Agile Generation AB</h1>
+        <h2 class="accessibility">We make the web a better place</h2>
+
+        <p class="section--start__copy section--start-intro__ingress beta">
+            Agigen is a digital agency based in Stockholm, Sweden.<br class="portable-hidden">
+            We create beautiful <span class="color--pink">design</span>, powerful <span class="color--blue">code</span> and <span class="color--orange">cool ideas</span>.
+        </p>
+
+        <h3 class="section--start-intro__logos-header">Friends &amp; clients</h3>
+
+        <div class="section--start-intro__logos container">
+            {{ partial "logos.html" . }}
+        </div>
+    </div>
+</section>
+
+
+<section class="section section--center-content section--start section--start-webprod text--center animate--in-view"
+ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
+
+    <div class="section__content">
+        <div class="container container--tight">
+
+            <p class="section--start__ingress">All shapes and sizes</p>
+            <h2 class="section--start__title"><a href="/services/web-production">Web Production</a></h2>
+
+            <p class="section--start__copy">We build awesome websites for our clients. If you are in need of kickass frontend development or scalable backends you should check us out.</p>
+
+            <a href="/services/web-production" class="btn btn--large">See how we do it</a>
+        </div>
+    </div>
+
+    <div class="portable-hidden lax lax--back">
+        <img src="/img/start/webprod/back.png" ng-style="{'transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-webkit-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-moz-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-ms-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)'}">
+    </div>
+    <div class="portable-hidden lax lax--middle">
+        <div class="lax__container" ng-style="{'transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-webkit-transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-moz-transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-ms-transform': 'translate3d('+x2+'%,'+y2+'%,0)'}">
+            <a href="/work/build-with-chrome/" class="lax__link lax__link--chrome">Build with Chrome</a>
+            <a href="/work/beta-sj-se/" class="lax__link lax__link--samsung">Beta Sj.se</a>
+        </div>
+    </div>
+    <div class="portable-hidden lax lax--front">
+        <img src="/img/start/webprod/front.png" ng-style="{'transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-webkit-transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-moz-transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-ms-transform': 'translate3d('+x3+'%,'+y3+'%,0)'}">
+    </div>
+
+
+</section>
+
+<div class="case case--start case--start--suissemania">
+    <div class="container">
+        <a href="/work/migros-suissemania/" class="case--start__content">
+            <h3 class="visuallyhidden">Web development case</h3>
+            <img src="/img/work/case/suisse/suissem_headercomp_new.png" class="case--start__image">
+            <h1 class="case__title"><span class="palm-hidden">MIGROS - </span>Suisse Mania</h1>
+            <p class="case__headline">Explore Switzerland in 3D</p>
+        </a>
+
+        <a href="/work/migros-suissemania/" title="Web development case: MIGROS - Suisse Mania" class="case--start__cta">View case</a>
+    </div>
+</div>
+
+<section class="section section--center-content section--start section--start-proddev animate--in-view"
+ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
+    <div class="section__content">
+        <div class="container">
+            <p class="section--start__ingress">From idea to pixel perfect</p>
+            <h2 class="section--start__title"><a href="/services/product-development">Product <br class="lap-and-up-hidden">development</a></h2><br>
+        </div>
+        <div class="container container--tight">
+            <p class="section--start__copy">We develop new products and services. Whether you're an established organization or a startup we'll help you out - from idea to finished product.</p>
+
+            <a href="/services/product-development" class="btn btn--large">Learn about our process</a>
+        </div>
+    </div>
+
+
+
+    <div class="portable-hidden lax lax--back">
+        <img src="/img/start/proddev/prod-back.png" ng-style="{'transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-webkit-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-moz-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)', '-ms-transform': 'scale(1.3) translate3d('+x+'%,'+y+'%,0)'}">
+    </div>
+    <div class="portable-hidden lax lax--middle">
+        <div class="lax__container" ng-style="{'transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-webkit-transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-moz-transform': 'translate3d('+x2+'%,'+y2+'%,0)', '-ms-transform': 'translate3d('+x2+'%,'+y2+'%,0)'}">
+            <a href="/work/billogram/" class="lax__link lax__link--billogram">
+                <img src="/img/start/proddev/billogram-wires.png" class="lax__link__img lax__link__img--standard">
+                <img src="/img/start/proddev/billogram-color.png" class="lax__link__img lax__link__img--hover">
+            </a>
+            <a href="/work/yogobe/" class="lax__link lax__link--yogobe">
+                <img src="/img/start/proddev/yogobe-wires.png" class="lax__link__img lax__link__img--standard">
+                <img src="/img/start/proddev/yogobe-color.png" class="lax__link__img lax__link__img--hover">
+            </a>
+        </div>
+    </div>
+    <div class="portable-hidden lax lax--front">
+        <img src="/img/start/proddev/prod-front.png" ng-style="{'transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-webkit-transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-moz-transform': 'translate3d('+x3+'%,'+y3+'%,0)', '-ms-transform': 'translate3d('+x3+'%,'+y3+'%,0)'}">
+    </div>
+
+</section>
+
+
+<div class="case case--start case--start--billogram">
+    <div class="container">
+        <a href="/work/billogram/" class="case--start__content">
+            <h3 class="visuallyhidden">Product development case</h3>
+            <img src="/img/start/proddev/start-billogram.png" class="case--start__image">
+            <h1 class="case__title">Billogram</h1>
+            <p class="case__headline">Invoicing on the fly - in the cloud.</p>
+        </a>
+
+        <a href="/work/billogram/" title="Product development case: Billogram" class="case--start__cta">View case</a>
+    </div>
+</div>
+
+<section class="section section--labs section--start-labs text--light">
+    <div class="container container--tight text--center">
+        <p class="section--start__ingress">Going bananas with</p>
+        <h2 class="section--start__title">Agigen Labs</h2>
+        <p class="section--start__copy">Our playground where we try out new tech and broaden our&nbsp;expertise.</p>
+        <p>
+            <a href="/services/labs" class="btn btn--large">Get inspired</a>
+        </p>
+    </div>
+
+    <div class="computer" ng-controller="chatCtrl" ng-cloak title="Chat with us - Powered by Slack.com">
+        <form ng-submit="send()">
+            <label class="screen" for="screen-input">
+                <div class="computer__terminal">
+                    <ul class="screen__lines">
+                        <li class="screen__line" ng-repeat="line in scrollback track by $index">
+                            <pre>{{"{{"}} line {{"}}"}}</pre>
+                        </li>
+                        <li class="screen__prompt-wrapper" ng-show="showPrompt">
+                            <span class="screen__prompt">{{"{{"}} prompt {{"}}"}} </span><!--
+                         --><input type="text" value="" id="screen-input" class="screen__input" ng-model="promptInput" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)" ng-click="updateCursorPosition()" autocomplete="off"><!--
+                         --><div class="screen__cursor" ng-style="{'left': cursorPositionLeft+'px', 'top': cursorPositionTop + 'px'}"></div>
+                        </li>
+                    </ul>
+                </div>
+            </label>
+        </form>
+    </div>
+</section>
+
+<section class="section section--start-contact">
+    <div class="container">
+        <p class="section--start__ingress section--start-contact__ingress">Let's hear your idea</p>
+        <h2 class="alpha">Get in touch</h2>
+
+        {{ partial "contact-grid.html" . }}
+
+    </div>
+</section>
+
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

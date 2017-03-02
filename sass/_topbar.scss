@@ -1,0 +1,249 @@
+$topbar-color: #fff;
+
+$topbar-filled-color:         #222;
+$topbar-webprod-filled-color: #222;
+$topbar-proddev-filled-color: #222;
+$topbar-labs-filled-color:    #222;
+$topbar-404-filled-color:     #fff;
+
+
+// $topbar-filled-color:         #ff0066;
+// $topbar-webprod-filled-color: $color-proddev-pink;
+// $topbar-proddev-filled-color: $color-webprod-blue;
+// $topbar-labs-filled-color:    $color-labs-orange;
+
+.topbar-wrapper {
+    position: fixed;
+    padding-top: 45px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    @include media-query(palm){
+        padding-top: 0;
+    }
+}
+
+.topbar {
+    @include user-select(none);
+    background: transparent;
+    padding: 20px 0;
+    line-height: 1;
+
+    @include transition(background 300ms $ease-in-out-cubic);
+
+    @include media-query(palm){
+        opacity: 0.9;
+        .container {
+            width: 90%;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: $topbar-color;
+    }
+
+    svg {
+        path {
+            fill: inherit;
+        }
+    }
+
+    &--filled {
+        background: #fff;
+
+        .page--404-page-not-found & {
+            background: transparent;
+        }
+    }
+
+    &.menu-expanded {
+        background: transparent;
+    }
+
+    &__title {
+        float: left;
+        svg {
+            width: 39px;
+            height: 30px;
+            fill: $topbar-color;
+            @include transition(all 300ms $ease-in-out-cubic);
+
+            @include media-query(palm) {
+                width: 29px;
+                height: 22px;
+            }
+
+            .page--worklist & {
+                fill: $topbar-filled-color;
+            }
+
+            .topbar--filled & {
+                fill: $topbar-filled-color;
+
+                .page--services--web-production & {
+                    fill: $topbar-webprod-filled-color;
+                }
+
+                .page--services--product-development & {
+                    fill: $topbar-proddev-filled-color;
+                }
+
+                .page--services--labs & {
+                    fill: $topbar-labs-filled-color;
+                }
+
+                .page--404-page-not-found & {
+                    fill: $topbar-404-filled-color;
+                }
+            }
+
+            .menu-expanded & {
+                fill: $topbar-color !important;
+            }
+        }
+        &:hover {
+            svg {
+            }
+        }
+    }
+
+    &__work-back {
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+        top: -5px;
+        padding-left: 60px;
+        &:before {
+            content: "<";
+            padding-right: 10px;
+        }
+    }
+
+    &.menu-expanded {
+        .topbar__title:hover svg {
+            @include transform-origin(center top);
+            @include animation(colorz 4s linear infinite);
+        }
+    }
+
+    &__menu-button {
+        float: right;
+        color: $topbar-color;
+        display: block;
+        padding: 0;
+        font-size: 26px;
+        line-height: 26px;
+        padding: 20px;
+        margin: -20px;
+
+        @include media-query(palm) {
+            font-size: 24px;
+            line-height: 24px;
+            margin-top: -22px;
+            margin-right: -19px;
+        }
+
+        &__inner {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+            &, &:before, &:after {
+                width: 26px;
+                height: 3px;
+                background-color: $topbar-color;
+
+                @include media-query(palm) {
+                    width: 24px;
+                    height: 2px;
+                }
+
+                .page--worklist & {
+                    background-color: $topbar-filled-color;
+                }
+
+                .topbar--filled & {
+                    background-color: $topbar-filled-color;
+
+                    .page--services--web-production & {
+                        background-color: $topbar-webprod-filled-color;
+                    }
+
+                    .page--services--product-development & {
+                        background-color: $topbar-proddev-filled-color;
+                    }
+
+                    .page--services--labs & {
+                        background-color: $topbar-labs-filled-color;
+                    }
+
+                    .page--404-page-not-found & {
+                        background-color: $topbar-404-filled-color;
+                    }
+                }
+
+                .menu-expanded & {
+                    background-color: $topbar-color !important;
+                }
+                // .transition-smooth(transform, background-color, top);
+                @include transition(all 300ms $ease-in-out-cubic);
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+
+                @include transform-origin(50% 50%);
+
+            }
+
+            &:before {
+                top: -0.3em;
+            }
+
+            &:after {
+                top: 0.3em;
+            }
+        }
+
+        &:hover {
+           .topbar__menu-button__inner {
+                &:before {
+                    width: 80%;
+                }
+                &:after {
+                    width: 40%;
+                }
+           }
+        }
+
+        &--active {
+            .topbar__menu-button__inner {
+                background: transparent !important;
+
+                &:before {
+                    width: 100% !important;
+                    @include transform(rotate3d(0,0,1,45deg));
+                }
+
+                &:after {
+                    width: 100% !important;
+                    @include transform(rotate3d(0,0,1,-45deg));
+                }
+
+                &:before, &:after {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+

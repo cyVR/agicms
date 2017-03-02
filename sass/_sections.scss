@@ -1,0 +1,18 @@
+.section {
+    width: 100%;
+    padding: 100px 0;
+    @include media-query(palm){
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &--center-content {
+        @extend .vc;
+    }
+
+    &--center-content &__content {
+        @extend .vc__content;
+    }
+}
+

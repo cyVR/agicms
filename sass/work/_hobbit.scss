@@ -1,0 +1,37 @@
+.page--work {
+    &--the-hobbit-2 {
+        .main-header {
+            background-color: #2d3339;
+            background-image: url(/img/work/case/hobbit/asset_headerbg.jpg);
+        }
+    }
+}
+.content--page-work {
+
+    .work__section--hobbit {
+        &--awards {
+
+        }
+        &--three-points {
+            background: #454e58;
+        }
+        &--grandfinale {
+            background: #151d23 url(/img/work/case/hobbit/asset_grandfinale.jpg) no-repeat top center;
+        }
+    }
+
+    .work-video--hobbit {
+        background-image: url(/img/work/case/hobbit/asset_moviebg.jpg);
+    }
+
+}
+
+.image-wrapper--hobbit.image-wrapper--strikethrough {
+    &:before {
+        background: #3E4E4D url(/img/work/case/hobbit/asset_divider.jpg) no-repeat top center;
+        // @include transform(translateY(10%));
+        top: 45%;
+        max-height: 60%;
+        height: 250px;
+    }
+}

@@ -1,0 +1,457 @@
+.page--work .main-header.main-header--work {
+    @include vhFejk(75);
+    background: #fff;
+    .giga {
+        color: #222;
+        padding-bottom: 30px;
+    }
+
+    @media only screen and (max-height: 900px) {
+        padding: 80px 0;
+    }
+}
+
+.awards-list {
+    margin-top: 120px;
+    @include media-query(palm){
+        margin-top: 30px;
+    }
+    @media only screen and (max-height: 700px) {
+        margin-top: 30px;
+    }
+
+    @media only screen and (min-width: 1020px) and (max-height: 850px){
+        margin-top: 50px;
+    }
+}
+
+.round-image {
+    border-radius: 50%;
+}
+
+.award {
+    position: relative;
+    height: 150px;
+    line-height: 150px;
+    @media only screen and (max-height: 900px) {
+        height: 110px;
+        line-height: 110px;
+
+    }
+    @media only screen and (max-height: 700px) {
+        height: 90px;
+        line-height: 90px;
+    }
+
+    @include media-query(palm){
+        height: 70px;
+        line-height: 70px;
+    }
+
+    margin: 0;
+    text-align: center;
+    border: 1px #eee solid;
+    border-width: 0 1px 1px 0;
+
+    &--4, &--8 {
+        border-right: 0;
+    }
+    &--5, &--6, &--7, &--8 {
+        border-bottom: 0;
+    }
+
+    .award__number {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        color: #222;
+        font-size: 30px;
+        font-weight: bold;
+        color: #999;
+
+        opacity: 0;
+        @include transform(translateY(0));
+        @include transition(all 200ms);
+
+        @include media-query(palm) {
+            font-size: 22px;
+        }
+        @media only screen and (max-height: 700px) {
+            font-size: 22px;
+        }
+    }
+
+    img {
+        vertical-align: middle;
+        display: inline-block;
+        max-height: 100%;
+        max-width: 50%;
+        @include transform(translateY(0px));
+        @include transition(transform 200ms);
+        @include media-query(palm) {
+            max-width: 80%;
+        }
+    }
+    &:hover {
+        background-color: #eee;
+        .award__number {
+            opacity: 1;
+            @include transform(translateY(-25px));
+            @include media-query(palm) {
+                @include transform(translateY(-10px));
+            }
+        }
+        img {
+            @include transform(translateY(20px));
+            @include media-query(palm) {
+                @include transform(translateY(10px));
+            }
+        }
+    }
+
+}
+
+.case--list {
+    @extend .text--light;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include media-query(palm){
+        &, & .case--list__contentwrapper {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        @extend .alpha;
+        @include media-query(palm) {
+            font-size: 36px;
+        }
+    }
+    &__subtitle {
+        @extend .epsilon;
+    }
+    &__text {
+        @extend .delta;
+    }
+
+    &__award-icon {
+        display: inline-block;
+        width: 71px;
+        height: 61px;
+    }
+
+    &__illustration {
+        img {
+            max-width: 100%;
+        }
+        @include media-query(lap-and-up){
+            z-index:100;
+            opacity: 0;
+            @include transition(opacity 500ms ease 200ms);
+        }
+
+        @include media-query(palm) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__contentwrapper {
+        position: relative;
+        @include media-query(lap-and-up){
+            padding-left: 50px;
+        }
+        &--left {
+            @include media-query(lap-and-up){
+                padding-left: 0;
+                padding-right: 50px;
+            }
+        }
+    }
+
+    &--aco {
+        background-color: #472e5a;
+        background-image: url(/img/work/aco-bg.jpg);
+
+        padding: 150px 0 240px;
+        .btn {
+            @include btnColors(white, #1d55ac);
+        }
+        @include media-query(palm){
+            padding: 60px 0 150px;
+        }
+    }
+    &--build {
+        $build-color: #1c5fb3;
+        background-color: $build-color;
+        // background-image: url(/img/work/sj-bg.jpg);
+        // background-size: cover;
+        padding: 0 0 30px;
+
+        @include sneddisTop(-4, 175px, $build-color);
+
+        &:after {
+            background: $build-color;
+        }
+        &__illustration {
+            max-width: 88%;
+            @include media-query(palm){
+                padding-top: 30px;
+            }
+            @include media-query(lap) {
+                padding-top: 30px;
+                max-width: 70%;
+            }
+        }
+        .btn {
+            @include btnColors(white, $build-color);
+        }
+        .case--list__contentwrapper {
+            top: 20px;
+
+            @include media-query(palm){
+                top: 0;
+            }
+        }
+        .container {
+            top: -80px;
+            @include media-query(portable){
+                top: -20px;
+            }
+            @include media-query(palm){
+                top: -40px;
+            }
+        }
+        @include media-query(portable){
+            padding-bottom: 60px;
+        }
+        @include media-query(palm){
+            padding: 0 0 0px;
+        }
+    }
+
+    &--samsung {
+        background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
+        padding: 140px 0 220px;
+        @include media-query(palm){
+            padding: 90px 0 120px;
+        }
+        .case--list__contentwrapper {
+            top: -40px;
+        }
+        .container {
+            z-index: 10;
+        }
+        &__illustration {
+            @include media-query(lap) {
+                max-width: 80%;
+            }
+        }
+
+        .btn:hover {
+            color: #222;
+        }
+    }
+
+    &--billogram {
+        background: #6abbb8;
+        @include sneddisTop(-4, 180px);
+        padding: 0 0 60px;
+        &__illustration {
+            max-width: 88.5%;
+            @include media-query(lap) {
+                max-width: 70%;
+            }
+        }
+        .case--list__contentwrapper {
+            top: -20px;
+            @include media-query(palm){
+                top: -30px;
+            }
+        }
+        .btn {
+            @include btnColors(white, #6abbb8);
+        }
+    }
+
+    &--carlsberg {
+        padding: 180px 0 250px;
+        background: #1c110f url(/img/work/carlsberg-bg.jpg) no-repeat center center;
+        background-size: cover;
+        .btn {
+            @include btnColors(white, #222);
+        }
+        @include media-query(palm){
+            padding: 60px 0;
+        }
+        .text-wrapper {
+            @include media-query(portable) {
+                max-width: 100%;
+            }
+        }
+    }
+
+
+
+}
+
+
+.fade-in-container {
+    .container {
+        opacity: 0;
+        @include transition(opacity 500ms ease 200ms);
+        @include media-query(palm){
+            opacity: 1;
+        }
+    }
+    &.in-view--partial .container {
+        opacity: 1;
+    }
+}
+
+.case--list__illustration,
+.section--webprod-case__illustration,
+.section--proddev-case__illustration {
+    @include media-query(lap-and-up){
+        @include transform(translateX(-20%));
+        @include transition(all 400ms $ease-out-quad 200ms);
+        opacity: 0;
+
+        &--from-right {
+            @include transform(translateX(20%));
+        }
+
+
+        &.in-view--partial {
+            @include transform(translateX(0%));
+            opacity: 1;
+        }
+
+    }
+}
+
+.archives {
+    padding: 100px 0 160px;
+    @include media-query(palm){
+        padding: 30px 0;
+        .container {
+            width: 90%;
+        }
+    }
+    .grid {
+        margin-top: 30px;
+    }
+}
+
+
+.archive-case {
+
+    display: block;
+    background: #f0f0f0;
+    margin-bottom: 24px;
+    @include media-query(palm){
+        margin-bottom: 6%;
+    }
+    position: relative;
+    @extend .text--center;
+
+    &__image {
+        display: block;
+    }
+    &__content {
+        width: 100%;
+        position: absolute;
+        top: 33%;
+        left: 0;
+        z-index: 2;
+        @include transition(transform 300ms $ease-out-quad, color 300ms $ease-out-quad);
+        @include media-query(portable){
+            color: white;
+            @include transform(translateY(-30px));
+        }
+    }
+    .btn {
+        @include btnColors(#fff, #fff);
+        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 0ms);
+        @include media-query(desk){
+            opacity: 0;
+            @include transform(translateY(-30px));
+        }
+    }
+    &__hilight {
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,255,1);
+        z-index: 1;
+        @include transition(opacity 200ms $ease-out-quad);
+        @include media-query(desk){
+            opacity: 0;
+        }
+    }
+
+    &__title {
+        @extend .gamma;
+        @include media-query(palm) {
+            font-size: 24px;
+        }
+        color: inherit;
+    }
+    &__tagline {
+        @extend .epsilon;
+        @include media-query(palm) {
+            padding-left: 10px;
+            padding-right: 10px;
+            letter-spacing: 1px;
+        }
+        color: inherit;
+    }
+
+    &:hover {
+        @include media-query(lap-and-up){
+            .archive-case {
+                &__content {
+                    color: white;
+                    @include transform(translateY(-30px));
+                    .btn {
+                        opacity: 1;
+                        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 200ms);
+                        @include transform(translateY(0px));
+                    }
+                }
+                &__hilight {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    @include media-query(palm){
+        padding: 20px 0;
+        .archive-case {
+            &__content {
+                color: white;
+                top: 20px;
+                @include transform(translateY(0px));
+                .btn {
+                    line-height: 1.5em;
+                    padding: 0.5em;
+                    opacity: 1;
+                    @include transform(translateY(0px));
+                }
+            }
+            &__hilight {
+                opacity: 0.6;
+            }
+            &__image {
+
+            }
+        }
+    }
+}

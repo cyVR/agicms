@@ -1,0 +1,113 @@
+{
+   "date": "2015-02-02T13:21:48+01:00",
+   "og_title": "Agigen Case Study - Retro Slack Channel",
+   "small_image": "slack.jpg",
+   "pretitle": "Retro style Slack channel",
+   "title": "Agigen Chat",
+   "color": "#f4a543",
+   "weight": 0
+}
+
+<div class="container">
+    <img src="/img/work/case/slack/top-slack@2x.png" class="work__header-image">
+</div>
+
+<section class="work__tldr hard--bottom">
+    <div class="container">
+        <h3 class="work__tldr__pretitle">What it is</h3>
+        <h2>
+            Our nifty little easter-egg chat on the start page caused<br>
+             a lot of interest, and we met some new friends.
+        </h2>
+
+        <a href="/" class="btn">Try it out</a>
+    </div>
+</section>
+
+<section class="container container--tight work__section">
+    <h2>Background</h2>
+
+    <p>
+        When we built this version of agigen.se we were just starting to use the hyped collaboration tool <a href="https://slack.com/" target="_blank" style="font-weight:bold">Slack</a>. We got hooked when we noticed how much it resembled IRC-style channels, and together with apps for all the platforms we use it became a knock-out victory over Skype that we had used in the past.
+    </p>
+
+    <p>
+        Their API provided some fun ways to integrate with Slack. We played around a bit with some different approaches, and came up with the idea that we could have a retro styled chat on our start page, where you could connect to one of our Slack channels.
+    </p>
+</section>
+
+<figure class="image-wrapper image-wrapper--strikethrough image-wrapper--slack">
+    <div class="container container--tight">
+        <img src="/img/work/case/slack/images@2x.png" class="image">
+    </div>
+</figure>
+
+<section class="container container--tight text--center soft--top">
+    <p>
+        When we launced we even got noticed by <a href="https://twitter.com/slackhq" target="_blank">Slack on twitter</a>, who tweeted about us, exposing us to Slack's 54 000 followers.
+    </p>
+
+    <article class="tweet tweet--slack">
+        <figure>
+            <img src="/img/work/case/slack/slack-sticker.png" width="50" class="slack-logo">
+            <figcaption>@SLACKHQ</figcaption>
+        </figure>
+
+        <div class="beta">
+            @lendai Very, very cool! <img src="/img/work/case/slack/emoji-star.png" class="emoji"> Loving the retro look and sounds <img src="/img/work/case/slack/emoji-wink.png" class="emoji"> <img src="/img/work/case/slack/emoji-computer.png" class="emoji">
+        </div>
+
+        <footer>
+            <time datetime="2014-10-10 19:00">Oct 10th, 2014</time>
+            <img src="/img/work/case/slack/twitter-icon.png" height="30" class="twitter-logo">
+        </footer>
+
+    </article>
+</section>
+
+<section class="container container--tight work__section">
+    <h2>The exposure</h2>
+
+    <p>
+        Since the launch until todays date (from october 2014 until january 2015) people from more than fifty countries have joined our channel. We've recieved praise, hate, and a lot of random fun converstations during work. The only problem we've had is that there are people connecting from different time zones when we're not available to answer.<br>
+        We have also had some regulars who have been visiting the chat from time to time, and one of them; <strong>Egor</strong> has always made us laugh with his amazing photoshop skills and stories from Ukraine.
+
+    </p>
+</section>
+
+<section class="slack-case-map" ng-controller="slackCaseMap">
+    <div id="slack-map" class="palm-hidden"></div>
+    <div class="slack-case-map__overlay palm-hidden">
+        <div class="container">
+            <aside class="slack-case-map__popup" ng-cloak>
+                {{ country || "Total 54 countries" }}
+            </aside>
+        </div>
+    </div>
+    <div class="slack-map--mobile lap-and-up-hidden container">
+
+        <h2>We've had visitors from the following countries</h2>
+        <ul>
+            <li ng-repeat="country in slackCountries" class="one-third">{{ country.name }}</li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="container container--tight work__section">
+    <h2>Some more features</h2>
+
+    <p>
+        And btw, have you noticed that there are even more features hidden in the pseudo-unix-like "shell"? Hint; start with <code>ls</code> and take it from there.
+    </p>
+</section>
+
+<section class="section section--center-content work__section work__section--grandfinale work__section--slack--grandfinale">
+    <div class="section__content">
+        <div class="container">
+            <h2 class="work__section--grandfinale__header">Our new friends</h3>
+            <div class="work__section--grandfinale__copy">Egor has always made us laugh with his amazing photoshop skills and stories from Ukraine.</div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,56 @@
+@include keyframes(spaceman) {
+  0% {
+    opacity:1;
+    @include transform(translateX(0) rotate(0deg));
+  }
+  25% {
+    @include transform(translateX(-1500%) rotate(720deg));
+  }
+  50% {
+    @include transform(translateX(-3000%) rotate(1440deg));
+  }
+  75% {
+    @include transform(translateX(-4500%) rotate(2160deg));
+    opacity:1;
+  }
+  99% {
+    @include transform(translateX(-4500%) rotate(2160deg));
+    opacity:0;
+  }
+}
+
+@include keyframes(outer-space) {
+  80% {
+    background: #1f58a3;
+  }
+  100% {
+    background: #000;
+  }
+}
+
+@include keyframes(processpoint) {
+    0% {
+        @include transform(scale(0));
+    }
+    80% {
+        @include transform(scale(1.5));
+    }
+    100% {
+        @include transform(scale(1));
+    }
+}
+
+@include keyframes(colorz) {
+    0% {
+        fill: #ffffff;
+    }
+    25% {
+        fill: $color-webprod-blue;
+    }
+    50% {
+        fill: $color-proddev-pink;
+    }
+    75% {
+        fill: $color-labs-orange;
+    }
+}
